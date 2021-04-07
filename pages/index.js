@@ -1,10 +1,16 @@
+import {useContext} from 'react';
 import BaseLayout from 'layout/baselayout';
 
-export default function Home() {
+import themecontext from "context/theme/themecontext";
+
+export default function Home(props) {
+  const {theme} = useContext(themecontext);
+  console.log(theme);
   return (
     <BaseLayout>
-        I am Home Page
+      <img src={theme === 'light' ? '/images/background-image-light.png' : '/images/background-image-dark.png'}/>
     </BaseLayout>
-
   )
 }
+
+
