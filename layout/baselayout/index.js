@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 import Header from "layout/header";
 
 const BaseLayout = ({children}) => {
@@ -14,9 +13,12 @@ const BaseLayout = ({children}) => {
 export default BaseLayout;
 
 const AppContainer = styled.main`
-  height: 100%;
+  max-height: 100vh;
+  min-height:100vh;
   width: 100%;
   overflow-x: hidden;
   position: relative;
+  display: flex;
+  flex-direction: column;
 `
 

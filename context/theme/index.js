@@ -27,7 +27,19 @@ const GlobalTheme = ({children}) => {
   }, [])
 
   const changeTheme = (theme) => {
-    alert("Changing theme")
+    if(!theme) {
+      return;
+    }
+    if(theme === 'light') {
+      setTheme('dark');
+      return;
+    }
+    setTheme('light')
+  }
+  const setTheme = val => {
+    setUserTheme(theme[val]);
+    setTm(val);
+    window.localStorage.setItem('theme', val);
   }
 
   return(

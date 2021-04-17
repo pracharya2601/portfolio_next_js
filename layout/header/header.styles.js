@@ -11,7 +11,7 @@ export const Nav = styled.nav`
   z-index: 999;
   height: 70px;
 
-  // background-color: ${({theme}) => theme.header || 'transparent'};
+  background-color: ${({theme}) => theme.header || theme.shadow};
   -webkit-box-shadow: 0px 0px 2px 0px ${({theme}) => theme.shadow}; 
   box-shadow: 0px 0px 2px 0px ${({theme}) => theme.shadow};
   display: flex;
@@ -26,13 +26,11 @@ export const NavbarContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
-  
   @media (max-width:400px){
       padding: 0 10px;
   }
   @media (max-width:991px) {
-      padding: 0 30px;
+      padding: 0 20px;
   }
   @media (min-width: 1500px) {
       max-width: 1500px;
@@ -51,11 +49,15 @@ export const NavAnchor = styled.a`
   font-size: 1.9rem;
   font-weight: 800;
   transition: all .5s ease;
-  text-transform: uppercase;
+  text-transform: lowercase;
   &:hover{
       transform: scale(1.02);
       text-decoration: none;
       color: ${({theme}) => theme.textHover};
+  }
+  & > span {
+    color: ${({theme}) => theme.textHover};
+    padding: 0 5px;
   }
 `;
 
@@ -72,6 +74,15 @@ export const MenuIcon = styled.div`
     transform: translate(-50%, 20%);
     font-size: 1.9rem;
     cursor: pointer;
+    margin-right: 15px;
+  }
+`
+export const ThemeIcon = styled.div`
+  padding: 5px;
+  margin: 0 0 0 auto;
+  cursor: pointer;
+  @media only screen and (max-width: 1000px) {
+    margin: 0 50px 0 auto;
   }
 `
 export const CrossBtn = styled(Cross)`
@@ -92,13 +103,12 @@ display: none;
       box-shadow:0px 0px 5px 0px ${({theme}) => theme.shadow};
     }
   }
-`;
+`;;
 
 export const Menu = styled.ul`
   display: flex;
   align-items: left;
   text-align: left;
-  // background-color: ${({theme}) => theme.bg};
   @media only screen and (max-width:1000px) {
       display: flex;
       flex-direction: column;
@@ -117,9 +127,13 @@ export const Menu = styled.ul`
 `;
 export const MenuItem = styled.li`
   list-style: none;
-  height: 70px;
+  height: 100%;
+  line-height: 70px;
+  margin-top: 15px;
   @media only screen and (max-width:1000px){
     width: 100%;
+    height: 70px;
+    margin-top: 0;
     &:hover {
       border: none;
       -webkit-box-shadow:0px 0px 5px 0px ${({theme}) => theme.shadow}; 
@@ -138,8 +152,9 @@ export const MenuLink = styled.a`
   height: 100%;
   transition: all .2s ease;
   text-decoration: none;
-  padding-top: 10px;
-  padding-left: 25px;
+  padding: 0 15px 0 15px;
+  background: ${({theme, bg}) => bg && theme.text};
+  color: ${({theme, bg}) => bg && theme.textHover};
   &:hover {
     color: #E38B06;
     transform: traslateY(-3rem);
@@ -148,14 +163,13 @@ export const MenuLink = styled.a`
   }
   &:active {
       transform: traslateY(3rem);
-      color: ${({theme}) => theme.textHover};
+      color: ${({theme, bg}) => !bg && theme.textHover};
   }
   @media only screen and (max-width:1000px){
       display: block;
-      padding: 20px;
       text-align: center;
       transition: all .2s ease;
-      color: ${({theme})=> theme.text};
+      color: ${({theme, bg}) => bg && theme.textHover};
   }
 `;
 

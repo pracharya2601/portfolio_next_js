@@ -1,6 +1,10 @@
-import React, { Fragment, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import {Sun} from '@styled-icons/boxicons-regular/Sun';
+import {Moon} from '@styled-icons/boxicons-regular/Moon';
+import {Cross} from '@styled-icons/entypo/Cross';
+import {Navicon} from '@styled-icons/evil/Navicon';
 import {
   Nav,
   NavbarContainer,
@@ -9,36 +13,47 @@ import {
   Menu,
   MenuItem,
   MenuLink,
-  CrossBtn
+  CrossBtn,
+  ThemeIcon
 
 } from './header.styles';
 
-import {Cross} from '@styled-icons/entypo/Cross';
-import {Navicon} from '@styled-icons/evil/Navicon';
+import themecontext from "context/theme/themecontext";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-
   const router = useRouter()
+
 
   const handleClick = () => setOpen(!open);
   const handleClose = (to) => {
     router.push(to);
     setOpen(false);
   }
+  const {theme, changeTheme} = useContext(themecontext);
+  console.log(router);
   return (
     <Nav>
       <NavbarContainer>
         <Link href="/">
-          <NavAnchor>Prakash Ac.</NavAnchor>
+          <NavAnchor>
+            <span>{"<"}</span>
+            Prakash
+            <span>{"/>"}</span>
+          </NavAnchor>
         </Link>
+        <ThemeIcon onClick={() => changeTheme(theme)}>
+          {theme === 'dark' ? <Sun color="yellow" size="40" />: <Moon color="black" size="30" />}
+        </ThemeIcon>
         <MenuIcon onClick = {handleClick}>
           {open ? <Cross size="38" />: <Navicon size="38"/>}
         </MenuIcon>
         <Menu open={open} onClick = {handleClick}>
           <CrossBtn size="48"/>
           <MenuItem>
-            <MenuLink onClick={() => handleClose('/about')}>About</MenuLink>
+            <MenuLink 
+              onClick={() => handleClose('/#about')}
+              >About</MenuLink>
           </MenuItem>
           <MenuItem>
             <MenuLink onClick={() => handleClose('/portfolio')}>Portfolio</MenuLink>
@@ -49,6 +64,16 @@ const Header = () => {
           <MenuItem>
             <MenuLink onClick={() => handleClose('/blog')}>Blog</MenuLink>
           </MenuItem>
+          {router.pathname && (
+            <>
+            { <MenuItem onClick={() => handleClose('/api/login')}>
+              <MenuLink bg >Login</MenuLink>
+            </MenuItem>}
+            {/* {<MenuItem onClick={() => handleClose('/api/auth/logout')}>
+              <MenuLink bg >Logout</MenuLink>
+            </MenuItem>} */}
+            </>
+          )}
         </Menu>
       </NavbarContainer>
     </Nav>
