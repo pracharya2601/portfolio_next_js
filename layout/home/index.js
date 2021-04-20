@@ -2,6 +2,8 @@ import {useContext} from 'react';
 import { useRouter } from 'next/router';
 import Typed from 'react-typed';
 import {Messages} from '@styled-icons/typicons/Messages';
+import {Html} from '@styled-icons/crypto/Html';
+
 import { Container,Row, Col, Button, Table,  } from 'reactstrap';
 import {
   HeroContainer,
@@ -15,6 +17,7 @@ import {
   ColStyled,
 } from './home.styles';
 
+import skills from 'utils/skills';
 import themecontext from "context/theme/themecontext";
 
 export const HeroLayout = (props) => {
@@ -109,7 +112,7 @@ export const AboutLayout = (props) => {
               </tr>
               <tr>
                 <td><Text weight="600">Website</Text></td>
-                <td><Text pointer onClick={externalLink}>www.acharyaprakash.com</Text></td>
+                <td><Text pointer color="textHover" onClick={externalLink}>www.acharyaprakash.com</Text></td>
               </tr>
               <tr>
                 <td><Text weight="600">Interests</Text></td>
@@ -122,6 +125,37 @@ export const AboutLayout = (props) => {
           </Table>
         </ColStyled>
         <div style={{height: '5vh', width: '100%'}}/>
+      </RowStyled>
+    </Container>
+  )
+}
+
+export const SkillLayout = (props) => {
+  console.log(skills);
+  return(
+    <Container id="skills">
+      <RowStyled>
+        <ColStyled sm="12">
+        <ContentHeader>
+            <div />
+            <H2
+              size="3rem"
+            >
+              Skills
+            </H2>
+            <Text>
+              Checkout my Skills
+            </Text>
+        </ContentHeader>
+        </ColStyled>
+        <ColStyled sm="12">
+          {skills.map((item) => (
+            <div key={item.id}>
+              {item.logo}
+              <code>{item.name}</code>
+            </div>
+          ))}
+        </ColStyled>
       </RowStyled>
     </Container>
   )

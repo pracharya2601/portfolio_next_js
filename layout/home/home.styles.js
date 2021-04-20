@@ -83,5 +83,5 @@ export const RowStyled = styled(Row)`
 export const ColStyled = styled(Col)`
   max-height: 100%;
   margin: auto 0;
-  padding: ${({padding}) => padding ? '10px' : '10px 0'};
+  padding: 10px;
 `

@@ -56,6 +56,11 @@ const Header = () => {
               >About</MenuLink>
           </MenuItem>
           <MenuItem>
+            <MenuLink 
+              onClick={() => handleClose('/#skills')}
+              >Skills</MenuLink>
+          </MenuItem>
+          <MenuItem>
             <MenuLink onClick={() => handleClose('/portfolio')}>Portfolio</MenuLink>
           </MenuItem>
           <MenuItem>
