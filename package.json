@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start"
+    "build": "next build",
+    "postbuild": "next-on-netlify"
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "next-on-netlify": "^2.6.3",
     "bootstrap": "^4.6.0",
     "dotenv": "^8.2.0",
     "framer-motion": "^4.1.4",

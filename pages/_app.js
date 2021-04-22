@@ -3,8 +3,6 @@ import { useRouter } from "next/router";
 import GlobalTheme from 'context/theme';
 import { AnimatePresence } from "framer-motion";
 
-import useScrollPosition from 'hooks/useScrollPosition';
-
 
 const handExitComplete = ()=> {
   if (typeof window !== "undefined") {
