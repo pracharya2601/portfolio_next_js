@@ -11,7 +11,7 @@ export const Nav = styled.nav`
   z-index: 999;
   height: 70px;
 
-  background-color: ${({theme}) => theme.header || theme.shadow};
+  background-color: ${({theme}) => theme.header || theme.bg};
   -webkit-box-shadow: 0px 0px 2px 0px ${({theme}) => theme.shadow}; 
   box-shadow: 0px 0px 2px 0px ${({theme}) => theme.shadow};
   display: flex;

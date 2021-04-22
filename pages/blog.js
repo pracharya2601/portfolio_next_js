@@ -1,10 +1,13 @@
 import React from 'react';
 import BaseLayout from 'layout/baselayout';
+import Pagelayout from 'layout/pagelayout';
 
 const Blog = () => {
   return (
     <BaseLayout>
-      Blog
+      <Pagelayout>
+        Blog
+      </Pagelayout>
     </BaseLayout>
   )
 }

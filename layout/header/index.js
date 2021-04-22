@@ -31,17 +31,14 @@ const Header = () => {
     setOpen(false);
   }
   const {theme, changeTheme} = useContext(themecontext);
-  console.log(router);
   return (
     <Nav>
       <NavbarContainer>
-        <Link href="/">
-          <NavAnchor>
-            <span>{"<"}</span>
-            Prakash
-            <span>{"/>"}</span>
-          </NavAnchor>
-        </Link>
+        <NavAnchor onClick={() => handleClose('/#home')}>
+          <span>{"<"}</span>
+          Prakash
+          <span>{"/>"}</span>
+        </NavAnchor>
         <ThemeIcon onClick={() => changeTheme(theme)}>
           {theme === 'dark' ? <Sun color="yellow" size="40" />: <Moon color="black" size="30" />}
         </ThemeIcon>
@@ -69,16 +66,18 @@ const Header = () => {
           <MenuItem>
             <MenuLink onClick={() => handleClose('/blog')}>Blog</MenuLink>
           </MenuItem>
-          {router.pathname && (
+          <MenuItem>
+            <MenuLink 
+              onClick={() => handleClose('/#contact')}
+              >Contact</MenuLink>
+          </MenuItem>
+          {/* {router.pathname && (
             <>
             { <MenuItem onClick={() => handleClose('/api/login')}>
               <MenuLink bg >Login</MenuLink>
             </MenuItem>}
-            {/* {<MenuItem onClick={() => handleClose('/api/auth/logout')}>
-              <MenuLink bg >Logout</MenuLink>
-            </MenuItem>} */}
             </>
-          )}
+          )} */}
         </Menu>
       </NavbarContainer>
     </Nav>

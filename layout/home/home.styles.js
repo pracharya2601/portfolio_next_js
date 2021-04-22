@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container, Row, Col, Button  } from 'reactstrap';
+import { Container, Row, Col, Button,  NavLink, Jumbotron,  } from 'reactstrap';
 
 export const HeroContainer = styled(Container)`
   min-height: 100vh;
@@ -61,7 +61,7 @@ export const ContentHeader = styled.div`
   width:100%;
   position: relative;
   padding-top: 90px;
-  padding-left: 20px;
+  padding-left: ${({nopadding}) => nopadding ? '0px' : '20px'};
   padding-right: 20px;
   padding-bottom: 30px;
   & > * {
@@ -77,11 +77,66 @@ export const ContentHeader = styled.div`
   }
 `
 export const RowStyled = styled(Row)`
-  min-height: 90vh;
+  min-height: ${({height}) => height || '90vh'};
   max-height: max-content;
 `
 export const ColStyled = styled(Col)`
   max-height: 100%;
   margin: auto 0;
   padding: 10px;
+`
+export const SkillBox = styled.div`
+  width: 5rem;
+  height: 6.5rem;
+  margin: 1rem;
+  position: relative;
+  border: 1px solid ${({theme}) => theme.shadow};
+  overflow:hidden;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  -webkit-box-shadow: 0px 0px 0px 1px ${({theme}) => theme.shadow}; 
+  box-shadow: 0px 0px 0px 1px ${({theme}) => theme.shadow};
+  display: flex;
+  justify-content: center;
+  &:hover {
+    & > code {
+      height: max-content;
+    }
+  }
+  & > code {
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: ${({theme}) => theme.text};
+    background: ${({theme}) => theme.shadow};
+    height: 21px;
+  }
+  
+  
+
+`
+export const SkillsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-content:flex-start;
+  min-height: 50vh;
+
+  @media (max-width: 767px) {
+    justify-content:center;
+  }
+`
+export const StyledTabs = styled(NavLink)`
+  color: ${({theme}) => theme.text};
+  background: ${({theme, activetab}) => activetab && theme.shadow};
+  &:hover {
+    color: ${({theme}) => theme.text};
+    background: ${({theme}) => theme.shadow};
+    cursor: pointer;
+  }
+`
+
+export const StyledJumb = styled(Jumbotron)`
+  background: ${({theme}) => theme.shadow};
 `

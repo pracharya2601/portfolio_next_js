@@ -4,6 +4,9 @@ import GlobalTheme from 'context/theme';
 import { UserProvider } from '@auth0/nextjs-auth0';
 import { AnimatePresence } from "framer-motion";
 
+import useScrollPosition from 'hooks/useScrollPosition';
+
+
 const handExitComplete = ()=> {
   if (typeof window !== "undefined") {
     const hashId = window.location.hash;

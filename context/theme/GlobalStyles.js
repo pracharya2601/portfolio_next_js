@@ -39,8 +39,8 @@ export default createGlobalStyle`
   body {
     height:100%;
     min-height: 100%;
-    max-height: 100%;
     width: 100%;
+    scroll-behavior: smooth;
   }
   body {
     margin: 0;
@@ -51,6 +51,14 @@ export default createGlobalStyle`
   * {
       transition: all 0.2s linear;
       transition-property: color, background-color, border-color;
+  }
+  a {
+    text-decoration: none;
+    color: ${({theme}) => theme.text};
+    &:hover {
+      text-decoration: none;
+      color: ${({theme}) => theme.textHover};
+    }
   }
 `;
 

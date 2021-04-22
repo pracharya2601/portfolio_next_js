@@ -1,40 +1,116 @@
 {
   "project": [
     {
-      "name": "Portfolio 1",
+      "title": "Project 1 this is good project",
+      "subtitle": "This is Sub title",
       "description": "This is portfolio 1",
       "id": "randomid1",
       "url": {
         "github": "https://www.github.com/pracharya2601",
         "project": "https://www.github.com/pracharya2601"
-      }
+      },
+      "technologyUsed" : ["Reactjs", "Styled-Components" , "Javascript"],
+      "imageUrl": [
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image one",
+          "caption": "Home Page"
+        },
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image two",
+          "caption": "Home Page"
+        },
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image three",
+          "caption": "Home Page"
+        }
+      ]
     },
     {
-      "name": "Portfolio 2",
+      "title": "Portfolio 2",
+      "subtitle": "This is Sub title",
       "description": "This is portfolio 2",
       "id": "randomid2",
       "url": {
         "github": "https://www.github.com/pracharya2601",
         "project": "https://www.github.com/pracharya2601"
-      }
+      },
+      "technologyUsed" : ["Reactjs", "CSS", "Styled-Components"],
+      "imageUrl": [
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image one",
+          "caption": "Home Page"
+        },
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image two",
+          "caption": "Home Page"
+        },
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image three",
+          "caption": "Home Page"
+        }
+      ]
     },
     {
-      "name": "Portfolio 3",
-      "description": "This is portfolio 3",
+      "title": "Portfolio 3",
+      "subtitle": "This is Sub title",
+      "description": "This is portfolio 3 djlsj sakjskld fksdj s.asld a a;sjdklsjdf slkjsl alksdjksdl alksjljs fsllkaskjdsjf ssjks slsjsdjsis sis s sjsdjsljaiserjweis ssjdsoiuji",
       "id": "randomid3",
       "url": {
         "github": "https://www.github.com/pracharya2601",
         "project": "https://www.github.com/pracharya2601"
-      }
+      },
+      "technologyUsed" : ["Reactjs", "CSS", "Styled-Components"],
+      "imageUrl": [
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image one",
+          "caption": "Home Page"
+        },
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image two",
+          "caption": "Home Page"
+        },
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image three",
+          "caption": "Home Page"
+        }
+      ]
     },
     {
-      "name": "Portfolio 4",
+      "title": "Portfolio 4",
+      "subtitle": "This is Sub title",
       "description": "This is portfolio 4",
       "id": "randomid4",
       "url": {
         "github": "https://www.github.com/pracharya2601",
         "project": "https://www.github.com/pracharya2601"
-      }
+      },
+      "technologyUsed" : ["Reactjs", "CSS", "Styled-Components"],
+      "imageUrl": [
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image one",
+          "caption": "Home Page"
+        },
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image two",
+          "caption": "Home Page"
+        },
+        {
+          "src": "https://filedn.com/ltOdFv1aqz1YIFhf4gTY8D7/ingus-info/BLOGS/Photography-stocks3/stock-photography-slider.jpg",
+          "altText": "Image three",
+          "caption": "Home Page"
+        }
+      ]
     }
   ]
 }

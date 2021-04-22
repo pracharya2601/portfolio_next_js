@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { Container } from 'reactstrap';
 import Footer from 'layout/footer';
 
-const Pagelayout = ({children, nopadding}) => {
+const Pagelayout = ({children, nopadding, onScroll}) => {
   return (
-    <PageContainer fluid={true}>
-      <MainContainer padding={nopadding} id="maincontainer">
+    <PageContainer fluid={true} id="pagecontainer">
+      <MainContainer padding={nopadding} id="maincontainer" onScroll={onScroll}>
         {children}
       </MainContainer>
       <Footer />
@@ -23,8 +23,10 @@ const PageContainer = styled(Container)`
   overflow: auto;
   display: flex;
   flex-flow: column;
+  scroll-behavior: smooth;
 `
 const MainContainer = styled.div`
   padding-top: ${({padding}) => !padding && '70px'};
   flex-grow:  1;
+  scroll-behavior: smooth;
 `

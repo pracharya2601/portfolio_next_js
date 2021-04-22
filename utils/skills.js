@@ -12,105 +12,112 @@ import {Mysql} from '@styled-icons/simple-icons/Mysql';
 import {Mongodb} from '@styled-icons/simple-icons/Mongodb';
 import {Firebase} from '@styled-icons/boxicons-logos/Firebase';
 import {Git} from '@styled-icons/boxicons-logos/Git';
-import {Npm} from '@styled-icons/icomoon/Npm';
+import {Npm} from '@styled-icons/evaicons-solid/Npm';
 import {Trello} from '@styled-icons/boxicons-logos/Trello';
+import {Typescript} from '@styled-icons/simple-icons/Typescript';
 
 
 const skills = [
   {
     id: 'html',
-    logo: <Html5 size="100" color="teal"/>,
-    tech: ['frontend'],
+    logo: <Html5 size="80" color="teal"/>,
+    tech: ['all', 'frontend'],
     name: 'HTML'
   },
   {
     id: 'css',
-    logo: <Css3 size="100" color="teal"/>,
-    tech: ['frontend'],
+    logo: <Css3 size="80" color="teal"/>,
+    tech: ['all', 'frontend'],
     name: 'CSS'
   },
   {
     id: 'sass',
-    logo: <Sass size="100" color="teal"/>,
-    tech: ['frontend'],
+    logo: <Sass size="80" color="teal"/>,
+    tech: ['all', 'frontend'],
     name: 'SASS'
   },
   {
     id: 'js',
-    logo: <Javascript size="100" color="teal"/>,
-    tech: ['frontend', 'backend'],
+    logo: <Javascript size="80" color="teal"/>,
+    tech: ['all', 'frontend', 'backend'],
     name: 'JS'
   },
   {
-    id: 'jquer',
-    logo: <Jquery size="100" color="teal"/>,
-    tech: ['frontend'],
+    id: 'jquery',
+    logo: <Jquery size="80" color="teal"/>,
+    tech: ['all', 'frontend'],
     name: 'jQuery'
   },
   {
+    id: 'typescript',
+    logo: <Typescript size="80" color="teal"/>,
+    tech: ['all', 'frontend', 'backend'],
+    name: 'TypeScript',
+  },
+  {
     id: 'react',
-    logo: <ReactLogo size="100" color="teal"/>,
-    tech: ['frontend', 'framework'],
+    logo: <ReactLogo size="80" color="teal"/>,
+    tech: ['all', 'frontend', 'framework'],
     name: 'React'
   },
   {
     id: 'styledcomponent',
-    logo: <StyledComponents size="100" color="teal"/>,
-    tech: ['frontend', 'framework'],
+    logo: <StyledComponents size="80" color="teal"/>,
+    tech: ['all', 'frontend', 'framework'],
     name: 'Styled Component'
   },
   {
     id: 'redux',
-    logo: <Redux size="100" color="teal"/>,
-    tech: ['frontend', 'framework'],
+    logo: <Redux size="80" color="teal"/>,
+    tech: ['all', 'frontend', 'framework'],
     name: 'Redux'
   },
   {
     id: 'nodejs',
-    logo: <Nodejs size="100" color="teal"/>,
-    tech: ['backend', 'frontend'],
+    logo: <Nodejs size="80" color="teal"/>,
+    tech: ['all', 'backend', 'frontend'],
     name: 'NodeJS'
   },
   {
     id: 'bootstrap',
-    logo: <Bootstrap size="100" color="teal"/>,
-    tech: ['frontend', 'framework'],
+    logo: <Bootstrap size="80" color="teal"/>,
+    tech: ['all', 'frontend', 'framework'],
     name: 'Bootstrap'
   },
   {
     id: 'mysql',
-    logo: <Mysql size="100" color="teal"/>,
-    tech: ['database'],
+    logo: <Mysql size="80" color="teal"/>,
+    tech: ['all', 'database'],
     name: 'MySQL'
   },
   {
     id: 'mongodb',
-    logo: <Mongodb size="100" color="teal"/>,
-    tech: ['database'],
+    logo: <Mongodb size="80" color="teal"/>,
+    tech: ['all', 'database'],
     name: 'MongoDB'
   },
   {
     id: 'firebase',
-    logo: <Firebase size="100" color="teal"/>,
-    tech: ['database'],
+    logo: <Firebase size="80" color="teal"/>,
+    tech: ['all', 'database'],
     name: 'Firebase'
   },
   {
     id: 'git',
-    logo: <Git size="100" color="teal"/>,
+    logo: <Git size="80" color="teal"/>,
     tech: ['other'],
     name: 'Git'
   },
   {
     id: 'npm',
-    logo: <Npm size="100" color="teal"/>,
+    logo: <Npm size="80" color="teal"/>,
     tech: ['other'],
     name: 'npm'
   },
   {
     id: 'trello',
-    logo: <Trello size="100" color="teal"/>,
-    tech: ['other', 'projectmanagement'],
+    logo: <Trello size="80" color="teal"/>,
+    tech: ['other',],
     name: 'Trello'
   }
 ]
