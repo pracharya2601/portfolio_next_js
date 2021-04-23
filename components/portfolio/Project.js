@@ -1,4 +1,4 @@
-import { Text } from 'layout/home/home.styles';
+import Image from 'next/image';
 import {useRouter} from 'next/router';
 import {GithubWithCircle} from '@styled-icons/entypo-social/GithubWithCircle';
 import {Live} from '@styled-icons/fluentui-system-filled/Live';
@@ -10,6 +10,7 @@ import {
   Button,
 } from 'reactstrap';
 
+import { Text } from 'layout/home/home.styles';
 import {
   StyledCard,
   AbsoluteCard,
@@ -24,7 +25,7 @@ const Project = ({
   subtitle,
   url,
   technologyUsed,
-  imageUrl,
+  thumbnail,
 }) => {
   const router = useRouter();
   const externalLink = (goto) => {
@@ -32,7 +33,7 @@ const Project = ({
   }
   return(
       <StyledCard>
-        <CardImg top width="100%" src={imageUrl[0].src} alt="image description" />
+        <CardImg top width="100%" src={thumbnail} alt="image description" />
         <CardBody>
           <CardTitle style={{height: '31px', overflow: 'hidden'}}>
             <Text size="1.2rem" weight="600">

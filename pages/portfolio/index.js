@@ -1,5 +1,4 @@
 import {useState} from 'react';
-import Link from 'next/link';
 import BaseLayout from 'layout/baselayout';
 import Pagelayout from 'layout/pagelayout';
 
@@ -8,25 +7,34 @@ import { Container, Nav, NavItem, TabContent, TabPane } from 'reactstrap';
 import {ColStyled,SkillsContainer, ContentHeader, H2, RowStyled, StyledTabs, Text} from 'layout/home/home.styles';
 import Project from 'components/portfolio/Project';
 
+import {createClient} from 'contentful';
+
+const client = createClient({
+  space:process.env.CONTENTFUL_SPACE_ID,
+  accessToken:process.env.CONTENTFUL_ACCESS_KEY,
+})
+
+
 const Portfolio = (props) => {
   const [activeTab, setActiveTab] = useState('all');
-  const {project, technology} = props;
+  const {portfolios, technology} = props;
 
   const toggle = tab => {
     if(activeTab !== tab) setActiveTab(tab);
   }
+  console.log(portfolios);
 
   const renderPortfolio = (projects) => (
-    projects.map(({id, title, subtitle, description, url, technologyUsed, imageUrl}) => (
+    projects.map(({fields: {id, title, subtitle, description, url, technologyUsed, thumbnail, uri}}) => (
       <div key={id} style={{width: '300px'}}>
         <Project 
           id={id}
           title={title}
           subtitle={subtitle}
           description={description}
-          url={url}
+          url={uri}
           technologyUsed={technologyUsed}
-          imageUrl={imageUrl}
+          thumbnail={thumbnail.fields.file.url}
         />
     </div>
     )))
@@ -69,13 +77,13 @@ const Portfolio = (props) => {
               <TabContent activeTab={activeTab}>
                   <TabPane tabId={'all'}>
                     <SkillsContainer>
-                      {renderPortfolio(project)}
+                      {renderPortfolio(portfolios)}
                     </SkillsContainer>
                   </TabPane>
                   {technology.map((item) => (
                     <TabPane tabId={item} key={item}>
                       <SkillsContainer>
-                        {renderPortfolio(project.filter((p) => p.technologyUsed.includes(item)))}
+                        {renderPortfolio(portfolios.filter((p) => p.fields.technologyUsed.includes(item)))}
                       </SkillsContainer>
                     </TabPane>
                   ))}
@@ -90,12 +98,13 @@ const Portfolio = (props) => {
 
 export default Portfolio;
 
-Portfolio.getInitialProps = async (ctx) => {
-  const res = await fetch(`${server}/api/portfolio`);
-  const json = await res.json();
-  const techArr = json.map(item => item.technologyUsed).join().split(',');
+export async function getStaticProps(){
+  const {items} = await client.getEntries({content_type: "portfolio"})
+  const techArr = items.map(item => item.fields.technologyUsed).join().split(',');
   return {
-    project: json,
-    technology: techArr.filter((c, index) => techArr.indexOf(c) === index),
-  };
+    props: {
+      portfolios: items,
+      technology: techArr.filter((c, index) => techArr.indexOf(c) === index),
+    }
+  }
 }
