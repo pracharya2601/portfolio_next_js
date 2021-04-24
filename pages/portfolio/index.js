@@ -2,7 +2,6 @@ import {useState} from 'react';
 import BaseLayout from 'layout/baselayout';
 import Pagelayout from 'layout/pagelayout';
 
-import server from 'config';
 import { Container, Nav, NavItem, TabContent, TabPane } from 'reactstrap';
 import {ColStyled,SkillsContainer, ContentHeader, H2, RowStyled, StyledTabs, Text} from 'layout/home/home.styles';
 import Project from 'components/portfolio/Project';
@@ -22,10 +21,9 @@ const Portfolio = (props) => {
   const toggle = tab => {
     if(activeTab !== tab) setActiveTab(tab);
   }
-  console.log(portfolios);
 
   const renderPortfolio = (projects) => (
-    projects.map(({fields: {id, title, subtitle, description, url, technologyUsed, thumbnail, uri}}) => (
+    projects.map(({fields: {id, title, subtitle, description, technologyUsed, thumbnail, uri}}) => (
       <div key={id} style={{width: '300px'}}>
         <Project 
           id={id}

@@ -62,7 +62,6 @@ const ProjectPage = ({project}) => {
         key={item}
       >
         <img src={item} alt={item.altText} style={{width: '100%', maxHeight: '500px', objectFit: 'contain'}}/>
-        <CarouselCaption captionText={item} />
       </CarouselItem>
     );
   });
