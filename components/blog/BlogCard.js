@@ -1,11 +1,13 @@
 import Image from 'next/image';
+import {useRouter} from 'next/router';
 import { Media } from 'reactstrap';
 import {BlogBox,Heading, IconContainer} from './blog.styles';
 import {Share} from '@styled-icons/icomoon/Share';
 const BlogCard = ({slug, title, imgUrl, altText, subtitle, createdAt}) => {
+  const router = useRouter();
   return (
-    <BlogBox onClick={() => alert(slug)}>
-      <Image src={imgUrl} height={175} width={280}/>
+    <BlogBox onClick={() => router.push(`/blog/${slug}`)}>
+      <Image src={imgUrl} height={175} width={280} alt={altText}/>
       <Media body id="mediabody">
       <Heading heading>
           {title}
@@ -14,7 +16,7 @@ const BlogCard = ({slug, title, imgUrl, altText, subtitle, createdAt}) => {
         <strong>Published at : </strong>{new Date(createdAt).toDateString()}
       </div>
       <div id="subtitle">
-          {subtitle}
+        <strong>Snippet : </strong>  {subtitle}
       </div>
       </Media>
       <IconContainer id="iconcontainer" onClick={(e) => e.stopPropagation()}>

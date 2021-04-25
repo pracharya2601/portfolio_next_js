@@ -1,4 +1,5 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import { useRouter } from 'next/router';
 import BaseLayout from 'layout/baselayout';
 import Pagelayout from 'layout/pagelayout';
 
@@ -22,18 +23,17 @@ const Blog = ({blogs, tags}) => {
   }
 
   const renderBlog = (blogs) => (
-    blogs.map(({fields: {slug, title, subtitle, tags, thumbnail:{fields: {file: {url}}, sys: {createdAt}}}}) => (
+    blogs.map(({fields: {slug, title, subtitle, tags, thumbnail:{fields: {file: {url}}, description, sys: {createdAt}}}}) => (
         <BlogCard
-          key={slug}
-          slug={slug}
-          title={title}
-          subtitle={subtitle}
-          imgUrl={`https:${url}`}
-          createdAt={createdAt}
-          altText={url}
-        />
+        key={slug}
+        slug={slug}
+        title={title}
+        subtitle={subtitle}
+        imgUrl={`https:${url}`}
+        createdAt={createdAt}
+        altText={description}
+      />
     )))
-  console.log(blogs);
 
   return (
     <BaseLayout>

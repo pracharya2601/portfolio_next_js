@@ -65,7 +65,6 @@ const ProjectPage = ({project}) => {
       </CarouselItem>
     );
   });
-console.log(url);
 
   return(
     <BaseLayout>

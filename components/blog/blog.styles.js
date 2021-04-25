@@ -12,7 +12,10 @@ export const BlogBox = styled.div`
   padding: 5px 50px 5px 5px;
   position: relative;
   flex-grow: 1;
+
   &:hover {
+    border-color: ${({theme}) => theme.text};
+    cursor: pointer;
     & #iconcontainer {
       width: 50px;
       height: 100%;
@@ -20,6 +23,10 @@ export const BlogBox = styled.div`
   }
   & #mediabody {
     padding-left: 10px;
+  }
+  & #subtitle {
+    max-height: 70px;
+    overflow: hidden;
   }
   @media (max-width:768px) {
     padding: 5px;
