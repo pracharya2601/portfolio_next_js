@@ -3,10 +3,11 @@ import BaseLayout from 'layout/baselayout';
 import Pagelayout from 'layout/pagelayout';
 
 import BlogDetail from 'components/blog/BlogDetail';
-import { Container} from 'reactstrap';
 
 import {createClient} from 'contentful';
-import { H2, Header, Text } from 'components/common';
+import { Hr, H2, Header, Text } from 'components/common';
+import { BlogDetailContainer } from 'components/blog/blog.styles';
+
 
 const client = createClient({
   space:process.env.CONTENTFUL_SPACE_ID,
@@ -18,7 +19,7 @@ const BlogSlug = ({blog}) => {
   return (
     <BaseLayout>
       <Pagelayout>
-        <Container>
+        <BlogDetailContainer>
           <Header>
               <H2>{title}</H2>
               <Text 
@@ -29,6 +30,7 @@ const BlogSlug = ({blog}) => {
                 {new Date(blog.sys.createdAt).toDateString()}
               </Text>
           </Header>
+          <Hr />
           {content.map(({data, content, nodeType}, index) => (
             <BlogDetail 
               key={index}
@@ -37,8 +39,7 @@ const BlogSlug = ({blog}) => {
               nodeType={nodeType}
             />
           ))}
-
-        </Container>
+        </BlogDetailContainer>
       </Pagelayout>
     </BaseLayout>
   )

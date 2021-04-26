@@ -3,7 +3,7 @@ import {useRouter} from 'next/router';
 import { Media } from 'reactstrap';
 import {BlogBox,Heading, IconContainer} from './blog.styles';
 import {Share} from '@styled-icons/icomoon/Share';
-const BlogCard = ({slug, title, imgUrl, altText, subtitle, createdAt}) => {
+const BlogCard = ({slug, title, imgUrl, altText, subtitle, createdAt, snippet}) => {
   const router = useRouter();
   return (
     <BlogBox onClick={() => router.push(`/blog/${slug}`)}>

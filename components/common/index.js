@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
   width: 100%;
-  padding: 30px 0 10px 0;
+  padding: 30px 10px 10px;
 `
 
 export const H2 = styled.h2`
@@ -48,4 +48,10 @@ export const Content = styled.main`
   & > * {
     margin-top: 5px;
   }
+`
+export const Hr = styled.hr`
+  color: ${({theme}) => theme.text};
+  background-color: ${({theme}) => theme.shadow};
+  margin-top: 0;
+  margin-bottom: 20px;
 `

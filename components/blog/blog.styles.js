@@ -1,7 +1,13 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-import { Media } from 'reactstrap';
+import {Container, Media } from 'reactstrap';
+
+export const BlogDetailContainer = styled(Container)`
+  margin-top: 10px;
+  background: ${({theme}) => theme.shadow};
+  padding: 0;
+`
 
 export const BlogBox = styled.div`
   display: flex;
@@ -97,5 +103,52 @@ export const IconContainer = styled.div`
       cursor: pointer;
       border: 2px solid ${({theme}) => theme.shadow};
     }
+  }
+`
+
+export const Paragraph = styled.p`
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  padding: 0 10px;
+  & > a  span {
+    font-style: italic;
+    transition: all 0.2s linear;
+    text-decoration: underline;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.03);
+    }
+  }
+  & > span {
+    display: inline-block;
+    :nth-child(1) {
+      text-indent: ${({textIntend}) => textIntend === 'true' ? '30px' : ""};
+    } 
+  }
+  @media (max-width:499px){
+    font-size: 1.0rem;
+  }
+`
+
+export const Span = styled.span`
+  margin-right: 3px;
+  font-family: 'Montserrat', 'Helvetica';
+  font-weight: ${({fontWeight}) => fontWeight || 'normal'};
+  font-style: ${({fontStyle}) => fontStyle || 'normal'};
+  text-decoration: ${({textDecoration}) => textDecoration || 'none'};
+`
+
+export const OutsideLink = styled.a`
+
+`
+export const ListItem = styled.li`
+
+`
+
+export const BlockQuote = styled.div`
+  height: max-content;
+  padding: 0 10px;
+  & > div {
+    border-left: 10px double ${({theme}) => theme.shadow};
   }
 `
