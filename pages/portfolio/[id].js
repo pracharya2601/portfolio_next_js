@@ -1,5 +1,4 @@
 import {useState} from 'react';
-import Image from 'next/image';
 import BaseLayout from 'layout/baselayout';
 import Pagelayout from 'layout/pagelayout';
 import { 
@@ -12,7 +11,7 @@ import {
   Button
 } from 'reactstrap';
 
-import {ColStyled, ContentHeader, H2, RowStyled, StyledTabs, Text} from 'layout/home/home.styles';
+import { Hr, H2, Header, Text } from 'components/common';
 import { Chip, ChipContainer } from 'components/portfolio/project.styles';
 
 import {Github} from '@styled-icons/boxicons-logos/Github';
@@ -70,16 +69,15 @@ const ProjectPage = ({project}) => {
     <BaseLayout>
       <Pagelayout>
         <Container>
-          <RowStyled>
-          <ColStyled sm="12">
-            <ContentHeader nopadding="true">
-              <H2 size="2rem">{title}</H2>
+            <Header>
+              <H2>{title}</H2>
               <Text>{subtitle}</Text>
-            </ContentHeader>
+            </Header>
             <div style={{padding: '20px 0', marginTop: '-30px'}}>
             <Button size="sm" onClick={() => externalLink(`${uri['project']}`)} color="info"><Live size="20"/>Visit Website</Button>
             <Button size="sm" onClick={() => externalLink(`${uri['github']}`)} color="info" style={{marginLeft: '10px'}}><Github size="20"/>Github</Button>
             </div>
+            <Hr />
             <Carousel
               activeIndex={activeIndex}
               next={next}
@@ -100,8 +98,6 @@ const ProjectPage = ({project}) => {
             <Text size="1.4rem">
               {description}
             </Text>
-            </ColStyled>
-          </RowStyled>
         </Container>
       </Pagelayout>
     </BaseLayout>

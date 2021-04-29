@@ -26,19 +26,19 @@ const Spinner = styled.div`
   animation: ${rotate360} 1s linear infinite;
   transform: translateZ(0);
   border-top: 2px solid transparent;
-  border-right: 4px solid black;
+  border-right: 4px solid ${({theme}) => theme.text};
   border-bottom: 2px solid transparent;
-  border-left: 4px solid black;
+  border-left: 4px solid  ${({theme}) => theme.text};
   background: transparent;
   width: 50px;
   height: 50px;
   border-radius: 50%;
 `;
 
-const Skeleton = ({splashText}) => {
+const Skeleton = ({splashText, spinner}) => {
   return (
       <ContainerSplash>
-          <Spinner />
+          {spinner && <Spinner />}
           {splashText && <h2>{splashText}</h2>}
       </ContainerSplash>
   )

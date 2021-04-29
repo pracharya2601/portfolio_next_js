@@ -114,13 +114,13 @@ const BlogDetail = ({data, content, nodeType, marks, value, elem, textIntend}) =
     const descArr = img.description.split("###");
     const clickHandle = () => {document.location.href = descArr[1]}
     return (
-      <div style={{margin: '10px 0 20px 0'}} onClick={clickHandle}>
+      <div style={{margin: '50px 0 20px 0'}} onClick={clickHandle}>
         <Image
           src={`https:${img.file.url}`}
           alt={img.title}
           layout="responsive"
           width={700}
-          height={400}
+          height={descArr[3] || 400}
         />
         {img.description && (
           <p style={{fontSize: '0.7rem', textAlign: 'center', padding: '10px', marginBottom: '20px'}}>
