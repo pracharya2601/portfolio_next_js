@@ -8,6 +8,7 @@ import BlogDetail from 'components/blog/BlogDetail';
 import {createClient} from 'contentful';
 import { Hr, H2, Header, Text } from 'components/common';
 import { BlogDetailContainer } from 'components/blog/blog.styles';
+import { redirect } from 'next/dist/next-server/server/api-utils';
 
 
 const client = createClient({
@@ -17,9 +18,10 @@ const client = createClient({
 
 const BlogSlug = ({blog}) => {
   const {title, slug, content:{content}, snippet, thumbnail, tags, subtitle} = blog.fields;
+  console.log(blog)
   return (
     <BaseLayout>
-          <Meta 
+      <Meta 
         title={`${title} | ${subtitle}`}
         description={snippet}
         previewImageURL={`https:${thumbnail.fields.file.url}`}
@@ -72,9 +74,18 @@ export async function getStaticProps({params}){
     content_type: "personalblog",
     "fields.slug": params.slug,
   })
+  if(!items.length) {
+    return {
+      redirect:{
+        destination: '/blog',
+        permanent: false,
+      }
+    }
+  }
   return {
     props: {
       blog: items[0],
+      revalidate: 1
     }
   }
 }
