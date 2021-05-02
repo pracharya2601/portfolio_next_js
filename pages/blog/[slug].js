@@ -1,6 +1,7 @@
 import React from 'react';
 import BaseLayout from 'layout/baselayout';
 import Pagelayout from 'layout/pagelayout';
+import Meta from 'components/meta';
 
 import BlogDetail from 'components/blog/BlogDetail';
 
@@ -15,9 +16,15 @@ const client = createClient({
 });
 
 const BlogSlug = ({blog}) => {
-  const {title, slug, content:{content}, thumbnail, tags} = blog.fields;
+  const {title, slug, content:{content}, snippet, thumbnail, tags, subtitle} = blog.fields;
   return (
     <BaseLayout>
+          <Meta 
+        title={`${title} | ${subtitle}`}
+        description={snippet}
+        previewImageURL={`https:${thumbnail.fields.file.url}`}
+        currentURL={`https://acharyaprakash.com/portfolio/${slug}`}
+      />
       <Pagelayout>
         <BlogDetailContainer>
           <Header>

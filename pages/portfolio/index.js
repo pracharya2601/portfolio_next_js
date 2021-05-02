@@ -7,6 +7,7 @@ import {ColStyled,SkillsContainer, ContentHeader, H2, RowStyled, StyledTabs, Tex
 import Project from 'components/portfolio/Project';
 
 import {createClient} from 'contentful';
+import Meta from 'components/meta';
 
 const client = createClient({
   space:process.env.CONTENTFUL_SPACE_ID,
@@ -36,9 +37,14 @@ const Portfolio = (props) => {
         />
     </div>
     )))
-
   return (
     <BaseLayout>
+      <Meta 
+        title="Portfolio | Prakash Acharya"
+        description="Prakash Acharya Software Engineer base in San Francisco. Frontend Engineer who specialize in javascript, typescript, nodejs and other framework"
+        previewImageURL="/images/portfolio.png"
+        currentURL="https://acharyaprakash.com/portfolio"
+      />
       <Pagelayout>
         <Container id="portfolio">
           <RowStyled>

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Header from "layout/header";
 
+
 const BaseLayout = ({children}) => {
   return(
     <AppContainer>

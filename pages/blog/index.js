@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import { useRouter } from 'next/router';
 import BaseLayout from 'layout/baselayout';
 import Pagelayout from 'layout/pagelayout';
@@ -13,6 +13,7 @@ const client = createClient({
 import { Container, Nav, NavItem, TabContent, TabPane } from 'reactstrap';
 import {ColStyled,SkillsContainer, ContentHeader, H2, RowStyled, StyledTabs, Text} from 'layout/home/home.styles';
 import BlogCard from 'components/blog/BlogCard';
+import Meta from 'components/meta';
 
 
 const Blog = ({blogs, tags}) => {
@@ -37,6 +38,12 @@ const Blog = ({blogs, tags}) => {
 
   return (
     <BaseLayout>
+        <Meta 
+        title="Blog | Prakash Acharya"
+        description="Prakash Acharya Software Engineer base in San Francisco. Frontend Engineer who specialize in javascript, typescript, nodejs and other framework"
+        previewImageURL="/images/blog.jpg"
+        currentURL="https://acharyaprakash.com/blog"
+      />
       <Pagelayout>
         <Container id="blog">
           <RowStyled>

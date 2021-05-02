@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import BaseLayout from 'layout/baselayout';
 import Pagelayout from 'layout/pagelayout';
+import Meta from 'components/meta';
 import { 
   Container,
   Carousel,
@@ -29,7 +30,7 @@ const client = createClient({
 
 const ProjectPage = ({project}) => {
   if(!project) return <Skeleton splashText="Building static page..."/>
-  const {fields:{id, title, subtitle, description,uri, url, technologyUsed}} = project;
+  const {fields:{id, title, subtitle, thumbnail, description,uri, url, technologyUsed}} = project;
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -67,6 +68,12 @@ const ProjectPage = ({project}) => {
 
   return(
     <BaseLayout>
+      <Meta 
+        title={`${title} | ${subtitle}`}
+        description={description}
+        previewImageURL={`https:${thumbnail.fields.file.url}`}
+        currentURL={`https://acharyaprakash.com/portfolio/${id}`}
+      />
       <Pagelayout>
         <Container>
             <Header>
